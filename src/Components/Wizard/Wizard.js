@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+// import axios from 'axios';
 
 class Wizard extends Component {
     constructor() {
@@ -22,6 +23,15 @@ class Wizard extends Component {
             [e.target.name]: e.target.type === 'number' ? parseInt(e.target.value) : e.target.value
         });
     };
+
+    // handleCreateListing() {
+    //     const { name, address, city, state, zip, img, mortgage, rent } = this.state;
+    //     axios.post('/api/listing',
+    //         { name, address, city, state, zip, img, mortgage, rent })
+    //         .then(res => {
+    //             res.data
+    //     })
+    // }
 
     render() {
         return (
@@ -51,6 +61,7 @@ class Wizard extends Component {
                         <h2>Zip Code</h2>
                         <input name='zip' type='number' value={this.state.zip} onChange={this.handleInputUpdate}></input>
                     </div>
+                    <div><button>submit</button></div>
                 </div>
             </div>
         )

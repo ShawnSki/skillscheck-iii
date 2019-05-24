@@ -21,7 +21,9 @@ class Dashboard extends Component {
             houseList: res.data
           })
         })
-      }
+    }
+    
+    
 
     
 

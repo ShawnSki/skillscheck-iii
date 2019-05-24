@@ -23,8 +23,12 @@ massive(CONNECTION_STRING)
         if (error) throw error;
     })
 
-// set endpoints
+// set endpoints. (:id's are targeting unique id's of listings). Connecting to the controller file to make thing actually happen.
 app.get('/api/listings', controller.getAllListings);
+app.get('api/listing/:id', controller.getListing);
+app.post('/api/listing', controller.addListing);
+app.delete('/api/listing/:id', controller.deleteListing);
+app.put('/api/listing/:id', controller.updateListing);
 
 
 // app is listening on server
