@@ -17,13 +17,14 @@ app.use(express.json());
 massive(CONNECTION_STRING)
     .then(dbInstance => {
         app.set('db', dbInstance);
-        console.log('❄️⛷ Its nuking! Free refills! ...and the database is connected.')
+        console.log('❄️ ⛷ Its nuking! Free refills! ...and the database is connected.')
     })
     .catch(error => {
         if (error) throw error;
     })
 
 // set endpoints
+app.get('/api/listings', controller.getAllListings);
 
 
 // app is listening on server
